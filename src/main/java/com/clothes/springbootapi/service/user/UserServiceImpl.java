@@ -50,8 +50,9 @@ public class UserServiceImpl implements IUserService {
         userRepository.deleteById(id);
     }
 
+
     @Override
-    public void softDelete(User user) {
+    public void softDelete(Long id) {
 
     }
 

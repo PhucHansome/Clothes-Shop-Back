@@ -34,6 +34,8 @@ public class OrderDTO {
 
     private String status;
 
+    private String description;
+
     private UserDTO user;
 
     private CustomerInfoDTO customerInfo;
@@ -48,6 +50,7 @@ public class OrderDTO {
                 .setProvinceName(provinceName)
                 .setGrandTotal(grandTotal)
                 .setStatus(status)
+                .setDescription(description)
                 .setUser(user.toUser());
     }
 }

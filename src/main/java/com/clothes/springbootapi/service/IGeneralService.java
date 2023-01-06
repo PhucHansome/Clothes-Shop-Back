@@ -15,5 +15,5 @@ public interface IGeneralService<T> {
 
     void remove(Long id);
 
-    void softDelete(T t);
+    void softDelete(Long id);
 }

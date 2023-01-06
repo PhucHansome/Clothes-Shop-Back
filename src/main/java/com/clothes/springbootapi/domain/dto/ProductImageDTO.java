@@ -25,6 +25,12 @@ public class ProductImageDTO {
     @JoinColumn(name = "product_id")
     private ProductDTO product_id;
 
+    public ProductImageDTO(Long id, String image, Product product_id) {
+        this.id = id;
+        this.image = image;
+        this.product_id = product_id.toProductDTO();
+    }
+
     public ProductImage toProductImage(){
         return new ProductImage()
                 .setId(id)

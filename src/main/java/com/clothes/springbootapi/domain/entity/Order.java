@@ -36,6 +36,8 @@ public class Order extends BaseEntity {
 
     private String status;
 
+    private String description;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -54,6 +56,7 @@ public class Order extends BaseEntity {
                 .setProvinceName(provinceName)
                 .setGrandTotal(grandTotal)
                 .setStatus(status)
+                .setDescription(description)
                 .setUser(user.toUserDTO());
     }
 }

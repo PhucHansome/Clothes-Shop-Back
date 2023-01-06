@@ -42,7 +42,7 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void softDelete(Role role) {
+    public void softDelete(Long id) {
 
     }
 

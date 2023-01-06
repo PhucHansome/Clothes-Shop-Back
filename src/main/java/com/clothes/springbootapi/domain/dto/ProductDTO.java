@@ -46,6 +46,22 @@ public class ProductDTO {
 
     private ProductSizeDTO productSize;
 
+    public ProductDTO(Long id, String code, String title, BigDecimal salesPrice, BigDecimal quantity, String status, String description, String slug, String image, BigDecimal entryPrice, Category category, ProductColor productColor, ProductSize productSize) {
+        this.id = id;
+        this.code = code;
+        this.title = title;
+        this.salesPrice = salesPrice;
+        this.quantity = quantity;
+        this.status = status;
+        this.description = description;
+        this.slug = slug;
+        this.image = image;
+        this.entryPrice = entryPrice;
+        this.category = category.toCategoryDTO();
+        this.productColor = productColor.toProductColorDTO();
+        this.productSize = productSize.toProductSizeDTO();
+    }
+
     public Product toProduct(){
         return new Product()
                 .setId(id)

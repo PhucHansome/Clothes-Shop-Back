@@ -1,10 +1,9 @@
 package com.clothes.springbootapi.repository;
 
-import com.clothes.springbootapi.domain.entity.Role;
+import com.clothes.springbootapi.domain.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, Long> {
-    Role findByName(String name);
+public interface CategoryRepository extends JpaRepository<Category, Long> {
 }
