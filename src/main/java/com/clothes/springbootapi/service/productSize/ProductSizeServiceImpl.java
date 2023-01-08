@@ -22,7 +22,7 @@ public class ProductSizeServiceImpl implements ProductSizeService{
 
     @Override
     public Optional<ProductSize> findById(Long id) {
-        return Optional.empty();
+        return productSizeRepository.findById(id);
     }
 
     @Override

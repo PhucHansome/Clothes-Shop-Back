@@ -23,7 +23,7 @@ public class ProductColorServiceImpl implements ProductColorService{
 
     @Override
     public Optional<ProductColor> findById(Long id) {
-        return Optional.empty();
+        return productColorRepository.findById(id);
     }
 
     @Override
