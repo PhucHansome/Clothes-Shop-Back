@@ -52,4 +52,25 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             "AND p.id = ?1"
     )
     Optional<ProductDTO> findProductDTOById(Long id);
+
+    @Query("SELECT NEW com.clothes.springbootapi.domain.dto.ProductDTO (" +
+            "p.id" +
+            ", p.code" +
+            ", p.title" +
+            ", p.salesPrice" +
+            ", p.quantity" +
+            ", p.status" +
+            ", p.description" +
+            ", p.slug" +
+            ", p.image" +
+            ", p.entryPrice" +
+            ", p.category" +
+            ", p.productColor" +
+            ", p.productSize" +
+            ") " +
+            "FROM Product p " +
+            "WHERE p.deleted = false " +
+            "AND p.slug = ?1"
+    )
+    Optional<ProductDTO> findProductDTOBySlug(String slug);
 }

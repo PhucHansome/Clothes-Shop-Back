@@ -41,6 +41,16 @@ public class ProductController {
         }
     }
 
+    @GetMapping("/slug/{slug}")
+    private ResponseEntity<?> findProductById(@PathVariable String slug) {
+        try {
+            Optional<ProductDTO> productDTO = productService.findProductDTOBySlug(slug);
+            return new ResponseEntity<>(productDTO.get(), HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            throw new DataInputException("No content");
+        }
+    }
+
     @PostMapping
     private ResponseEntity<?> doCreateProduct(@RequestBody ProductDTO productDTO) {
         try {

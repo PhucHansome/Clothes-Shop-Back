@@ -43,9 +43,9 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public void softDelete(Long id) {
-        Optional<ProductDTO> productDTO = productRepository.findProductDTOById(id);
-        productDTO.get().toProduct().setDeleted(true);
-        productRepository.save(productDTO.get().toProduct());
+        Optional<Product> product = productRepository.findById(id);
+        product.get().setDeleted(true);
+        productRepository.save(product.get());
     }
 
     @Override
@@ -56,5 +56,10 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public Optional<ProductDTO> findProductById(Long id) {
         return productRepository.findProductDTOById(id);
+    }
+
+    @Override
+    public Optional<ProductDTO> findProductDTOBySlug(String slug) {
+        return productRepository.findProductDTOBySlug(slug);
     }
 }
