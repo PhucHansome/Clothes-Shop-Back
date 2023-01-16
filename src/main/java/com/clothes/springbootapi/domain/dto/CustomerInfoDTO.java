@@ -33,6 +33,15 @@ public class CustomerInfoDTO {
     @JoinColumn(name = "location_region_id", nullable = false)
     private LocationRegionDTO locationRegion;
 
+    public CustomerInfoDTO(Long id, User user, String fullName, String phone, BigDecimal debt, LocationRegion locationRegion) {
+        this.id = id;
+        this.user = user.toUserDTO();
+        this.fullName = fullName;
+        this.phone = phone;
+        this.debt = debt;
+        this.locationRegion = locationRegion.toLocationRegionDTO();
+    }
+
     public CustomerInfo toCustomerInfo(){
         return new CustomerInfo()
                 .setId(id)

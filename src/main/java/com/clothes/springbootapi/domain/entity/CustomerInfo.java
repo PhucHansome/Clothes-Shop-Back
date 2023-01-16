@@ -34,7 +34,7 @@ public class CustomerInfo  extends BaseEntity {
 
     private BigDecimal debt;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "location_region_id")
     private LocationRegion locationRegion;
 

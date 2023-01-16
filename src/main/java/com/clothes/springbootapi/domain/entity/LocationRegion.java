@@ -37,9 +37,6 @@ public class LocationRegion extends BaseEntity {
 
     private String address;
 
-    @OneToOne(mappedBy = "locationRegion")
-    private CustomerInfo customerInfo;
-
     public LocationRegionDTO toLocationRegionDTO(){
         return new LocationRegionDTO()
                 .setId(id)
@@ -48,6 +45,6 @@ public class LocationRegion extends BaseEntity {
                 .setDistrictName(districtName)
                 .setProvinceName(provinceName)
                 .setAddress(address)
-                .setCustomerInfo(customerInfo.toCustomerInfoDTO());
+                ;
     }
 }

@@ -29,8 +29,6 @@ public class LocationRegionDTO {
 
     private String address;
 
-    private CustomerInfoDTO customerInfo;
-
     public LocationRegion toLocationRegion(){
         return new LocationRegion()
                 .setId(id)
@@ -39,6 +37,6 @@ public class LocationRegionDTO {
                 .setDistrictName(districtName)
                 .setProvinceName(provinceName)
                 .setAddress(address)
-                .setCustomerInfo(customerInfo.toCustomerInfo());
+                ;
     }
 }
